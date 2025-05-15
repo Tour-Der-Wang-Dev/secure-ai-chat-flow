@@ -1,0 +1,99 @@
+
+.cmdk-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  animation: overlay-show 150ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.cmdk-dialog {
+  position: fixed;
+  top: 25%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  max-width: 600px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  padding: 16px;
+  animation: content-show 150ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.cmdk-input {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  font-size: 16px;
+  outline: none;
+  margin-bottom: 16px;
+}
+
+.cmdk-list {
+  max-height: 400px;
+  overflow-y: auto;
+  margin: 0 -16px;
+  padding: 0 16px;
+}
+
+.cmdk-group-heading {
+  user-select: none;
+  font-size: 14px;
+  color: #6b7280;
+  font-weight: 500;
+  margin: 24px 0 16px 0;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.cmdk-item {
+  cursor: pointer;
+  height: 48px;
+  border-radius: 8px;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 0 8px;
+  margin-bottom: 8px;
+  user-select: none;
+  will-change: background, color;
+  transition: all 150ms ease;
+}
+
+.cmdk-item[data-selected="true"] {
+  background-color: rgba(0, 0, 0, 0.05);
+  color: inherit;
+}
+
+.cmdk-item-shortcut {
+  margin-left: auto;
+  color: #6b7280;
+}
+
+.cmdk-separator {
+  height: 1px;
+  background-color: rgba(0, 0, 0, 0.1);
+  margin: 8px 0;
+}
+
+@keyframes overlay-show {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes content-show {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -4px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, 0) scale(1);
+  }
+}

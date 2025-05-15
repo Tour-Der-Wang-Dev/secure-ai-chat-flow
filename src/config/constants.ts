@@ -21,11 +21,26 @@ export const AI_MODELS = [
 
 // Command system
 export const COMMANDS = {
-  help: { description: "Display available commands and usage" },
-  clear: { description: "Clear chat display" },
-  exit: { description: "End current session" },
-  save: { description: "Export chat history to file" },
-  model: { description: "Select different AI model" },
-  retry: { description: "Regenerate last AI response" },
-  scroll: { description: "Navigate message history", usage: "/scroll <up/down>" },
+  help: { 
+    description: "Display available commands and usage"
+  },
+  clear: { 
+    description: "Clear chat display" 
+  },
+  exit: { 
+    description: "End current session" 
+  },
+  save: { 
+    description: "Export chat history to file" 
+  },
+  model: { 
+    description: "Select different AI model" 
+  },
+  retry: { 
+    description: "Regenerate last AI response" 
+  },
+  scroll: { 
+    description: "Navigate message history", 
+    usage: "/scroll <up/down>" 
+  },
 };

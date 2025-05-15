@@ -1,13 +1,17 @@
 
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useChatContext } from '../context/ChatContext';
 import MessageList from './MessageList';
 import InputArea from './InputArea';
 import ModelSelector from './ModelSelector';
 import { testApiConnection } from '../services/openRouterApi';
+import CommandPalette from './CommandPalette';
+import { Button } from './ui/button';
+import { CommandIcon } from 'lucide-react';
 
 const ChatInterface: React.FC = () => {
   const { error } = useChatContext();
+  const [commandPaletteOpen, setCommandPaletteOpen] = useState(false);
 
   useEffect(() => {
     const checkApiConnection = async () => {
@@ -22,11 +26,22 @@ const ChatInterface: React.FC = () => {
 
   return (
     <div className="flex flex-col h-screen bg-gray-50">
-      <header className="bg-blue-600 text-white p-4 shadow-md">
-        <h1 className="text-xl font-bold">Secure Chat Interface</h1>
-        <p className="text-sm opacity-75">
-          Type /help to see available commands
-        </p>
+      <header className="bg-blue-600 text-white p-4 shadow-md flex justify-between items-center">
+        <div>
+          <h1 className="text-xl font-bold">Secure Chat Interface</h1>
+          <p className="text-sm opacity-75">
+            Type /help to see available commands
+          </p>
+        </div>
+        <Button 
+          variant="ghost" 
+          size="sm" 
+          className="text-white hover:bg-blue-500"
+          onClick={() => setCommandPaletteOpen(true)}
+        >
+          <CommandIcon className="w-5 h-5 mr-2" />
+          Commands
+        </Button>
       </header>
       
       {error && (
@@ -43,6 +58,11 @@ const ChatInterface: React.FC = () => {
       </div>
       
       <InputArea />
+
+      <CommandPalette 
+        open={commandPaletteOpen} 
+        onOpenChange={setCommandPaletteOpen} 
+      />
     </div>
   );
 };
