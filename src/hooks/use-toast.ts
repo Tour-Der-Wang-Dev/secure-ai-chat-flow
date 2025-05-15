@@ -1,3 +1,4 @@
+
 import * as React from "react"
 
 import type {
@@ -137,10 +138,13 @@ function dispatch(action: Action) {
   })
 }
 
-type Toast = Omit<ToasterToast, "id">
+// Fix: Changed type from 'Toast = Omit<ToasterToast, "id">' to just 'Toast' with optional id
+type Toast = Partial<Omit<ToasterToast, "id">> & {
+  id?: string;
+}
 
 function toast({ ...props }: Toast) {
-  const id = genId()
+  const id = props.id || genId()
 
   const update = (props: ToasterToast) =>
     dispatch({
@@ -158,7 +162,7 @@ function toast({ ...props }: Toast) {
       onOpenChange: (open) => {
         if (!open) dismiss()
       },
-    },
+    } as ToasterToast,
   })
 
   return {
