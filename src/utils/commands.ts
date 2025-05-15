@@ -9,7 +9,8 @@ export const generateHelpText = (): string => {
   
   Object.entries(COMMANDS).forEach(([cmd, info]) => {
     helpText += `/${cmd} - ${info.description}\n`;
-    if (info.usage) {
+    // Check if usage property exists before trying to access it
+    if ('usage' in info && info.usage) {
       helpText += `    Usage: ${info.usage}\n`;
     }
   });

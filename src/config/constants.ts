@@ -19,8 +19,14 @@ export const AI_MODELS = [
   { id: "google/gemini-pro", name: "Gemini Pro" },
 ];
 
+// Define the type for command info
+interface CommandInfo {
+  description: string;
+  usage?: string; // Make usage optional
+}
+
 // Command system
-export const COMMANDS = {
+export const COMMANDS: Record<string, CommandInfo> = {
   help: { 
     description: "Display available commands and usage"
   },
