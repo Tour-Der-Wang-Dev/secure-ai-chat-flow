@@ -1,73 +1,127 @@
-# Welcome to your Lovable project
 
-## Project info
+# OpenRouter Chat Application
 
-**URL**: https://lovable.dev/projects/1199e226-c458-485d-8cbb-f31f3bbc2aad
+A secure and professional chat interface built with OpenRouter's API, featuring real-time messaging, command system, and comprehensive security features.
 
-## How can I edit this code?
+![Chat Interface](https://placeholder.com/chat-interface)
 
-There are several ways of editing your application.
+## 🚀 Quick Start
 
-**Use Lovable**
+### Prerequisites
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/1199e226-c458-485d-8cbb-f31f3bbc2aad) and start prompting.
+- Node.js (v16 or later)
+- npm or yarn
 
-Changes made via Lovable will be committed automatically to this repo.
+### Setup Instructions
 
-**Use your preferred IDE**
+1. **Clone the repository**
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
+```bash
+git clone <repository-url>
+cd openrouter-chat-app
 ```
 
-**Edit a file directly in GitHub**
+2. **Install dependencies**
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+```bash
+npm install
+# or
+yarn
+```
 
-**Use GitHub Codespaces**
+3. **Set up environment variables**
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+Create a `.env` file in the root directory with your OpenRouter API key:
 
-## What technologies are used for this project?
+```
+VITE_OPENROUTER_API_KEY=your_openrouter_api_key
+```
 
-This project is built with:
+You can get your API key from [OpenRouter](https://openrouter.ai/keys).
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+4. **Start the development server**
 
-## How can I deploy this project?
+```bash
+npm run dev
+# or
+yarn dev
+```
 
-Simply open [Lovable](https://lovable.dev/projects/1199e226-c458-485d-8cbb-f31f3bbc2aad) and click on Share -> Publish.
+5. **Access the application**
 
-## Can I connect a custom domain to my Lovable project?
+Open your browser and navigate to `http://localhost:8080`
 
-Yes, you can!
+## 🛠️ Technologies
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+- **Frontend Framework**: React with TypeScript
+- **Build Tool**: Vite
+- **Styling**: Tailwind CSS
+- **UI Components**: shadcn/ui
+- **API Integration**: OpenRouter API
+- **Form Handling**: react-hook-form
+- **Data Fetching**: TanStack Query
+- **Icons**: Lucide React
+- **Toast Notifications**: Sonner
+- **Charts/Graphs**: Recharts
+- **Date Handling**: date-fns
+- **Input Sanitization**: DOMPurify
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+## 🧩 Features
+
+- Real-time messaging with AI models
+- Message pagination with infinite scroll
+- Command system (/help, /clear, /exit, /save, etc.)
+- Model selection for different AI providers
+- Rate limiting (30 requests/minute)
+- Input sanitization for security
+- Mobile responsive design
+- Session timeout after inactivity
+- Chat history export
+
+## 🤝 Contributing
+
+We welcome contributions to improve this application! Here's how you can help:
+
+### Contribution Guidelines
+
+1. **Fork the repository**
+
+2. **Create a feature branch**
+
+```bash
+git checkout -b feature/your-feature-name
+```
+
+3. **Make your changes**
+   - Follow the project's code style and conventions
+   - Write meaningful commit messages
+   - Add or update tests where appropriate
+
+4. **Run tests and ensure code quality**
+
+```bash
+npm run test
+npm run lint
+```
+
+5. **Submit a pull request**
+   - Provide a clear description of your changes
+   - Link any related issues
+
+### Code Style
+
+- Follow TypeScript best practices
+- Use functional components with hooks
+- Keep components small and focused
+- Use Tailwind CSS for styling
+- Document complex logic with comments
+
+## 📄 License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+## 🙏 Acknowledgements
+
+- OpenRouter API for providing access to various AI models
+- shadcn/ui for the excellent component library
+- All contributors who have helped improve this project
